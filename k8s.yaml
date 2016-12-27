@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: spring-batch-admin-sample
+  labels:
+    name: spring-batch-admin-sample
+    context: lab
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: spring-batch-admin-sample
+        context: lab
+    spec:
+      containers:
+      - name: spring-batch-admin-sample
+        image: lab/spring-batch-admin-sample
+        ports:
+        - containerPort: 8080
